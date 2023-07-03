@@ -63,4 +63,34 @@
 > Review & Restrospective 通常就是由PM取得客戶回饋，取得客戶意見；組內回顧注重在優化組內流程
 
 #### Kanban
+![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/8117ed52-c23a-40e7-b935-84e6dc2d44d1)
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/648fa98e-9cf4-4a52-8d2e-529c7c5cec6d)
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/8a9fdfe3-bb54-463d-88d8-8dbc795792db)
+
+> 任務流程可視化
+
+> 漸進式的開發
+
+> 限制任務數量 (階段數量VS個人數量)
+
+> 與Scrum結合皆以任務為開發工作單位 > 以Sprint為單位準備Kanban board(獨立看板) > 預測每個任務的開發時間，每個Sprint任務時間總和要等於Sprint總長度(兩周份任務)
+
+#### 軟體開發流程(依主流敏捷流程設計)
+![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/56d761eb-1d4f-4862-84b1-23e3c664dca1)
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/cb672155-6d28-4983-afbb-5fd9351a8471)
+> 真正有價值是軟體所解決的問題，所以定義問題的重要性不亞於工程議題
+
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/995954d1-5cb5-426e-93b3-4d23c9acea3f)
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/541d4dd6-c9cf-41d4-9e46-887e92fa0f29)
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/048d826e-711f-411b-95eb-658374fcbd7a)
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/4a6c11ef-66c1-4ff0-8ad6-add62d30c431)
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/a378ab42-4bc0-4ecd-991a-82567f76a37e)
+
+
+## 定義問題
+
+
+
+
+
 
