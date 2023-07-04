@@ -251,11 +251,45 @@
 > 設計Data Model需要的三個要素: 結構一般使用XML或json格式 / Primary key純粹用於識別的Unique ID / Index滿足實際需求的索引標籤
 > ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/dcb78126-ff86-4a55-97c6-82443d49745d)
 > Data Model是真實問題的資料型態表示，用於解決問題的程式必定圍繞著資料模型打造
-
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/ca9a9356-c385-40dd-b681-6a3aa1f7ddf3)
+> Index就是要定義索引標籤 https://aws.amazon.com/tw/nosql/
 
 #### 虛擬碼與UML設計圖(Pseudocode & UML Diagrams)
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/6ee1b563-c5bc-47f8-8f50-3b58518742e0)
+>
+> Pseudocode 是以人類語言解釋演算法步驟的方式，大致按照一般程式語言的排版方式，沒有嚴格格式要求
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/d2c7a2d1-7a27-4ee8-a885-802262c14317)
+> UML圖形 : Component Diagram用於描述系統架構 / Activity Diagram用於描述事件處理的流程與行為 / Sequence Diagram用於描述各Component之間的互動
+> 
+> UML Diagram：https://www.diagrams.net/
+>
+> 這範例為Component diagram  ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/942b9a7c-bf24-4fc6-a97b-2f1c85c49fdf)
+> 箭頭表示各Component相互依賴關係
+>
+> 這範例為activity diagram ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/daef084d-fe3f-4c0c-8551-26ea75adeb7b)
+> 
+> 這範例為Sequence Diagram ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/4eedbf2e-78aa-4023-a79c-ee9f5c64de77) (較為複雜的系統中使用)
+> 
 
 #### 錯誤處理(Error Handling)
+> 上面UML Diagram都是Happy path，但事情不會這麼順利，所以會有以下幾種錯誤
+>
+> 可能錯誤來源 : 自己的API，必須說明所有可能返回的Client error(HTTP 400)，理論上系統不應該要有可預見的系統錯誤
+>
+> 別人的API，程式可能依賴別人的API/服務(Dependency)，因為無法控制其他程式庫/服務，因此必須考慮其發生錯誤的最高狀況(系統錯誤HTTP500)
+>
+> Infrastructure，除了軟體之間的介面，基礎建設(硬體)也有可能出錯，例如Server,database
+>
+> 複雜的人為錯誤
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/c66a4cda-94c7-452c-b81d-d5048eba2f4f)
+>
+> 錯誤處理的思考流程 : 所有錯誤都必須留下紀錄 > 資料不能有任何缺失 > 錯誤發生後的用戶體驗
+>
+> 所有錯誤必須留下紀錄 : 只要程式沒有按照happy path運行，無輪錯誤是否被成功處理，都需要留下紀錄(LOG) / LOG對運營來說極為重要，沒有足夠紀錄就無法再事後解決任何問題 /
+>
+> 資料不能有任何缺失 : 若錯誤發生在會更改資料(write operation 例如Create,Update,delete)的操作中，必須保證資料正確性 / 資料不一定要再正確的狀態，但之後必須有辦法復原 / 最糟情況是回逤到某個時間點(snapshot)
+>
+> 用戶體驗 : 確保資料正確的前提下，提升錯誤發生當下的用戶體驗 / 避免要求用戶進行非必要的操作，例如對暫時性的錯誤(網路問題、流量限制)，可以設定自動重試等方法減少用戶操作已提升體驗
 
 #### 時間表(Timeline)
 
