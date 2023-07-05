@@ -292,15 +292,39 @@
 > 用戶體驗 : 確保資料正確的前提下，提升錯誤發生當下的用戶體驗 / 避免要求用戶進行非必要的操作，例如對暫時性的錯誤(網路問題、流量限制)，可以設定自動重試等方法減少用戶操作已提升體驗
 
 #### 時間表(Timeline)
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/f519ec8e-ae70-470b-9bd9-57f2a8526a32)
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/a500d28b-9bef-4a85-9127-be0ef93c4006)
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/4ff0a100-1a20-4812-8305-cb106560090b)
+> 建立時間表的原則: 誠實且正確的預測 / 要考慮實際可用於開發的時間 / 需要將其他組員的進度納入考慮
+>
+> 時間表是個人的commitment整個組的專案完成時間會以每人的時間表為基礎來推算
+
 
 ## 實現(Implementation)
 #### 專案設定講解
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/618032e2-8a4e-4ea0-a3d4-b35189811a70)
+>
+> MongoDB Atlas: https://www.mongodb.com/atlas/database
+> Make 的學習資源連結：https://www.gnu.org/software/make/manual/make.html
+> 先到github fork專案 / mongodb創建資料庫
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/726d6eca-4ac7-4267-a05c-f0babc11cd87)
+> 建立database > 創建user > 建好資料庫後點擊connect > 練習的不用特別設定IP > 選python與3.6版本以上 > 回到pycharm在該專案資料夾新增file > .env > Mongo_endpoint=剛剛伺服器的網址 > 網址替換<password>+上專案名稱
+![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/b84f789d-675f-4e55-9d4e-b512144b6594)
+> 環境設好之後 > 準備好makefile > 開啟terminal打上deactivate跳出虛擬環境 > make init > make setupMongo (這指令會協助將資料匯入MongoDB >　make run < ctrl+c結束
+
+
 #### 程式碼風格(Coding Style)
+
 #### 程式文件(Code Documentation)
+
 #### 依賴管理(Dependency Management)
+
 #### 配置文件(Config)
+
 #### 紀錄(Logging)
+
 #### GIT版本管理
+
 #### 別急!
 
 ## 測試(Testing)
