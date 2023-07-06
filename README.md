@@ -339,7 +339,9 @@
 > 所有dependencies與版本要 一目了然 / 能夠快速安裝與設定
 >
 > pipenv : dependency manager + virtual environment 管理所有dependency版本，獨立的虛擬環境避免不同project互相影響
->
+> 
+> Pipenv 的 Github 連結：https://github.com/pypa/pipenv
+> 
 > pipenv shell 就可以進入到虛擬環境，獨立環境 / pipenv lock可以鎖起來套件版本 > pipenv sync 就可以用lock這個檔案來安裝
 > ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/883a0f59-3b1a-474d-920c-eec9155dd4c3)
 > 
@@ -357,7 +359,9 @@
 
 
 #### 紀錄(Logging)
-> 系統發生的事件透過一行行資訊記錄下來
+> Python logging 快速入門：https://docs.python.org/3/howto/logging.html
+>
+>系統發生的事件透過一行行資訊記錄下來
 > ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/78a2ba02-a1b5-466d-ac51-bf681c06f725)
 > ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/e1ca6356-8be4-4f23-8bff-8232ed7d8872)
 > 分等級 : debug用於除錯的資訊 / info記錄一般資訊 / warning警告但程式仍可正常運行 / error造成單一事件無法正常處理 / critival導致整個程式無法正常運行
@@ -372,6 +376,8 @@
 > Local的專案 (untracked changes) git不會自動去追蹤這些改動，我們需要使用git add去追蹤>改動打包存檔就是git commit>git push上傳到github
 >
 > 使用git pull電腦上的存檔就會與線上的同步了
+>
+> Git 的詳細教學：https://git-scm.com/book/zh/v2
 
 #### 別急!
 
@@ -392,8 +398,12 @@
 > 我們可以透過依賴注入 > 外部注入一個假個資料庫 / 我們要避免兩個單元有太高的相互依賴性 / 避免直接在單元內部建立其他單元 / 在創建object的時候依賴從外部注入
 > ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/c38665e0-0c59-4550-8cd1-dcbd68ac5bb4)
 > dependency injection : 避免兩個單元有太高的相互依賴性 /避免直接在單元內部建立其他單元 / 創建object的時候依賴從外部注入
+>
+> https://testing.googleblog.com/2015/04/just-say-no-to-more-end-to-end-tests.html
 
 #### 測試技巧-Stubs,Spies,Mocks
+> https://martinfowler.com/articles/mocksArentStubs.html
+>
 > 我們只要測試我們想測試的部份
 >
 > 我們需要製作測試用的FakeDatabase
@@ -412,16 +422,15 @@
 > ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/123df323-d923-4d8b-a2ec-8cba7bbb16b3)
 > pipenv run pytest tst/unit
 > ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/ff53e503-3b7d-4d70-bbff-e595b396f81b)
-
-
-
+>
+> Pytest: https://docs.pytest.org/en/6.2.x/contents.html
 
 
 #### 整合測試(Integration Test)
 
 
 #### 端到端測試(E2E Test)
-
+> Postman: https://www.postman.com/
 
 #### 程式碼審核(Code Review)
 
@@ -430,9 +439,9 @@
 ## 部署(Deployment)
 #### 部署
 
-
+Heroku 網站連結：https://www.heroku.com/home
 #### 持續整合與持續交付(CI/CD)-第一部份
-
+Github Action 的 Documentation: https://docs.github.com/en/actions
 
 #### 持續整合與持續交付(CI/CD)-第二部份
 
@@ -446,10 +455,14 @@
 #### 下一輪開發
 #### PM與DevOps Engineer
 #### 提升能力的下一步
+Design Pattern 的入門教學（可以切換中文版）：https://refactoring.guru/
+System Design 的入門教學（可以切換中文版）：https://github.com/donnemartin/system-design-primer
 #### 結語
 
 ## 進階單元
 #### 物件導向設計(Object-Oriented Design)
 #### 編輯器的選擇Vim,Emacs與IDE
+如何在 PyCharm 中使用 Vim 作為編輯器：https://www.jetbrains.com/help/pycharm/using-product-as-the-vim-editor.html
+如何在 PyCharm 中使用 Emacs 作為編輯器：https://www.jetbrains.com/help/pycharm/using-emacs-as-an-external-editor.html
 #### 其他類型測試
 #### Operational Excellence
