@@ -310,20 +310,67 @@
 > ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/726d6eca-4ac7-4267-a05c-f0babc11cd87)
 > 建立database > 創建user > 建好資料庫後點擊connect > 練習的不用特別設定IP > 選python與3.6版本以上 > 回到pycharm在該專案資料夾新增file > .env > Mongo_endpoint=剛剛伺服器的網址 > 網址替換<password>+上專案名稱
 ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/b84f789d-675f-4e55-9d4e-b512144b6594)
-> 環境設好之後 > 準備好makefile > 開啟terminal打上deactivate跳出虛擬環境 > make init > make setupMongo (這指令會協助將資料匯入MongoDB >　make run < ctrl+c結束
-
+> 環境設好之後 > 準備好makefile > 開啟terminal打上deactivate跳出虛擬環境 > make init > make setupMongo (這指令會協助將資料匯入MongoDB >　make run < ctrl+c結束伺服器的運行
 
 #### 程式碼風格(Coding Style)
+>![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/5fef50df-9f69-46b5-9873-ab49ad87e147)
+> Style為了提升程式碼的易讀性而推出的規範、沒有強制性也不影響程式結果，沒有所謂正確標準，強調一致性，同個project的code應採用相同規範
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/6fe018bf-7262-4cd0-9469-a944b9910326)
+>
+> PEP 8：https://www.python.org/dev/peps/pep-0008/ Black 的 Github：https://github.com/psf/black Pylint 的快速入門：https://pylint.pycqa.org/en/latest/tutorial.html 這個網站也有完整的 Pylint 使用說明 Pylint 的 Github：https://github.com/PyCQA/pylint
+>
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/c3e1842d-c561-44d8-9fc9-13c121c80528)
+>
+> 在pycharm可以進入到pipenv shell環境 執行black這個指令接上檔案名稱 就會依照pep8的標準排版。
+>
+> pylint demo.py可以檢查檔案是否有符合pep8的style
 
 #### 程式文件(Code Documentation)
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/aa375ae1-181b-4d83-966c-42816cd4fcb0)
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/6c4698eb-c63a-4197-ac3e-8d461742f492)
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/da80decb-6c51-4833-98c0-d060e53cae72)
+> readme一定要寫好
+> 
+> documentation對自己的價值不大，但是對公司團隊來說價值很大，因此不要跳過!!!
 
 #### 依賴管理(Dependency Management)
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/8a5c202d-13ca-4b82-86c3-47d92ab587ed)
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/96d69e74-4b01-45b7-9377-4c7c9c80e05d)
+> 所有dependencies與版本要 一目了然 / 能夠快速安裝與設定
+>
+> pipenv : dependency manager + virtual environment 管理所有dependency版本，獨立的虛擬環境避免不同project互相影響
+>
+> pipenv shell 就可以進入到虛擬環境，獨立環境 / pipenv lock可以鎖起來套件版本 > pipenv sync 就可以用lock這個檔案來安裝
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/883a0f59-3b1a-474d-920c-eec9155dd4c3)
+> 
 
 #### 配置文件(Config)
+> 部屬息息相關的文件，根據部屬環境不同而改變的數值，需要由手動設定，例如資料庫位置
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/b437d929-510a-4373-bab4-3c25ca38fa6b)
+>
+> 設定cofig : environment variable在執行環境中宣告的變數，程式需要在運行時從環境中讀取 / code/data file : 有些程式運行的初始設定值，會直接寫在程式或文本裡 / cofig service，透過網路從其他地方讀取config
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/b6ee845d-e152-47d1-a64e-4a0c6c587094)
+> 我們需要思考哪些數值會隨環境不同而改變，然後根據手邊資源來設定config
+> 透過.env設定 flask_env=development
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/a5a24000-a568-46f7-a54a-e2898cd01db2)
+> 
+
 
 #### 紀錄(Logging)
+> 系統發生的事件透過一行行資訊記錄下來
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/78a2ba02-a1b5-466d-ac51-bf681c06f725)
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/e1ca6356-8be4-4f23-8bff-8232ed7d8872)
+> 分等級 : debug用於除錯的資訊 / info記錄一般資訊 / warning警告但程式仍可正常運行 / error造成單一事件無法正常處理 / critival導致整個程式無法正常運行
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/225b78d9-9eb8-427f-8f84-766f06a1febc)
+> 他是為了之後運營我需要使用工具精準的紀錄發生過的事件
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/830b95ae-630a-4e95-bead-65a7f3e9a5a2)
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/5db35197-8dde-4f84-8346-9481f631f248)
+> 
+
 
 #### GIT版本管理
+> 
+>
 
 #### 別急!
 
