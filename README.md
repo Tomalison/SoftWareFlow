@@ -367,26 +367,79 @@
 > ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/5db35197-8dde-4f84-8346-9481f631f248)
 > 
 
-
 #### GIT版本管理
-> 
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/dd95f29c-889a-43fa-a2da-98a4d9e8bf8e)
+> Local的專案 (untracked changes) git不會自動去追蹤這些改動，我們需要使用git add去追蹤>改動打包存檔就是git commit>git push上傳到github
 >
+> 使用git pull電腦上的存檔就會與線上的同步了
 
 #### 別急!
 
 ## 測試(Testing)
 #### 測試
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/6750a11c-50e2-470f-8532-9c41b184665a)
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/da10d329-538b-40ff-9952-7b254abe2107)
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/6a78a987-cc19-4efb-bc65-ba6ce4a5e564)
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/b7acb4f7-3852-44e0-a356-3ac57a18434c)
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/eb0c9239-30b9-4b01-a556-b7c3c3946177)
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/decf56fe-978e-4f0b-9187-9c7384cb726f)
+> 需要將測試資料輸入資料庫嗎? 
+>
+> 每一次測試都需要花時間連結資料庫嗎?
+>
+> 要是資料庫的功能有錯呢?
+>
+> 我們可以透過依賴注入 > 外部注入一個假個資料庫 / 我們要避免兩個單元有太高的相互依賴性 / 避免直接在單元內部建立其他單元 / 在創建object的時候依賴從外部注入
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/c38665e0-0c59-4550-8cd1-dcbd68ac5bb4)
+> dependency injection : 避免兩個單元有太高的相互依賴性 /避免直接在單元內部建立其他單元 / 創建object的時候依賴從外部注入
+
 #### 測試技巧-Stubs,Spies,Mocks
+> 我們只要測試我們想測試的部份
+>
+> 我們需要製作測試用的FakeDatabase
+>
+> stubs是我們自己寫測試元件 / mocks是事先定易好行為的測試元件，預先設定會如何被呼叫 : if(發生了甚麼事) then(mock應該做甚麼) / Spies在object外面套上一層外殼，可用於追蹤object的使用情況，例如呼叫次數，呼叫的argument
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/1e78c173-5e08-4427-a282-dfaf18538af8)
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/ebfe4dc0-4e5e-4103-879d-550c7ac37c3d)
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/ccb3010e-9bb8-46de-a3cc-5d1edeb49e4a)
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/75cb26e7-98d2-4c86-969e-e0a2d04f55fb)
+
 #### 單元測試(Unit Test)
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/e6d92aa8-8f0a-4cf1-bec0-c66cabce10b4)
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/92330f79-078d-46c5-8d70-451a32d0c0e0)
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/b1075842-c833-4787-87cb-fde2d5f14c2c)
+> 這是唯一會檢驗功能是否正確地測試
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/123df323-d923-4d8b-a2ec-8cba7bbb16b3)
+> pipenv run pytest tst/unit
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/ff53e503-3b7d-4d70-bbff-e595b396f81b)
+
+
+
+
+
 #### 整合測試(Integration Test)
+
+
 #### 端到端測試(E2E Test)
+
+
 #### 程式碼審核(Code Review)
+
+
 
 ## 部署(Deployment)
 #### 部署
+
+
 #### 持續整合與持續交付(CI/CD)-第一部份
+
+
 #### 持續整合與持續交付(CI/CD)-第二部份
+
+
 #### 指標與警報(Metrics and Alarm)
+
+
 #### Canary部署
 
 ## 總結
