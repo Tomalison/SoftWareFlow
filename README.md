@@ -534,16 +534,85 @@
 
 ## 總結
 #### 下一輪開發
+> 如何在多個project之間轉換，達到效率最大化
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/1d4c780d-1411-4126-82d1-c042560e9a1a)
+> 一個project會由一個團隊負責，團隊不同的腳色會負責專案中的不同部份
+
 #### PM與DevOps Engineer
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/5fd92879-7c13-4ab6-9d09-bb260085ac28)
+> Product Manager : 職責是確保客戶需求有被理解並滿足/ 代表團隊與客戶溝通需求 / 在定義問題與設計階段與工程師密切互動
+>
+> Project Manager : 職責是確保開發進度沒有落後 / 協助團隊內部，與其他團隊的溝通/ 在實現、測試與部署的階段會與工程師密切互動
+>
+> DevOps : 開發(development) 與 營運(operation)的結合，在敏捷開發框架下，程式從設計到部署都由一個團隊負責，需要確保團隊內部同仁員溝通順暢 / 開發與營運的一體化以及自動化
+>
+> DevOps Engineer : 負責各個環境的建立與維護 / 協助部署以及排除部署後的營運問題 / 有可能直接由團隊的軟體工程師負責
+>
+> 其他角色 : 軟體架構施(Software Architect) / 資料科學家(Data Scientist) / UI/UX設計師(Designer) / Business Agent
+
 #### 提升能力的下一步
-Design Pattern 的入門教學（可以切換中文版）：https://refactoring.guru/
-System Design 的入門教學（可以切換中文版）：https://github.com/donnemartin/system-design-primer
-#### 結語
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/a5b98466-7bc3-4ebe-9e4c-8ad0d1266292)
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/bb809203-35d6-4ce8-9c77-d03d92ad98d0)
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/ad2a5ce7-e5c6-42d8-9eba-0a9e5b75876e)
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/2daa9a9d-ae86-4f17-9fb9-92dcb8a5fb61)
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/8cd22469-c99b-4ea7-8058-ec4e9875a7b6)
+> Design Pattern 的入門教學（可以切換中文版）：https://refactoring.guru/
+>
+> System Design 的入門教學（可以切換中文版）：https://github.com/donnemartin/system-design-primer
+
 
 ## 進階單元
 #### 物件導向設計(Object-Oriented Design)
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/440e106b-9e1d-4736-ae57-ddfba34c3c54)
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/b8f4e687-6832-4e1b-b0d9-f0efbf00d552)
+> 物件 : 抽象(Abstraction) / 封裝(Encapsulation) / 繼承(Inheritance) / 多型(Polymorphism)
+>
+> 考慮成品的流程中會需要用到甚麼元件，對應成程式中的物件
+>
+> 抽象 : 介面與實現分離，只須了解介面無須鑽研實踐，只需要知道它的功能是甚麼
+>
+> 封裝 : 避免直接暴露物件狀態的實現，將資料與實現方法保護於物件之中，限制物件外部使用者對物件內部狀態的操作
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/f861d47a-774d-4de8-b9a7-0c8b6bb2f159)
+>
+> 繼承 : 物件可以透過繼承來獲得另一個物件的實現，一般來說可透過Subclass的方式來達成，用於建立兩個物件之間"is-a"的關係 / 繼承一個class之後，就與該class永久綁定，繼承了superclass之後，便需要了解他的實現細節，但這與封裝的概念相違背
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/a3f1131a-10e7-4b97-86a3-7adaa03c678e)
+>
+> 多型 : 讓不同的物件使用相同介面，可以減少重複定義相同的操作，有多種方式可以達成多型的實踐
+>
+> 介面與實作分離是軟體開發的核心
+
 #### 編輯器的選擇Vim,Emacs與IDE
-如何在 PyCharm 中使用 Vim 作為編輯器：https://www.jetbrains.com/help/pycharm/using-product-as-the-vim-editor.html
-如何在 PyCharm 中使用 Emacs 作為編輯器：https://www.jetbrains.com/help/pycharm/using-emacs-as-an-external-editor.html
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/b1ed6afe-6c25-4eb4-ad61-6ba219af8e1b)
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/9779b338-b372-448e-9a42-3e8bf1affa6e)
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/0b5effc6-3b75-40a8-aff0-d7741bb9ff46)
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/763e6df7-5c48-4da6-8e96-095b68ed48b7)
+> 如何在 PyCharm 中使用 Vim 作為編輯器：https://www.jetbrains.com/help/pycharm/using-product-as-the-vim-editor.html
+>
+> 如何在 PyCharm 中使用 Emacs 作為編輯器：https://www.jetbrains.com/help/pycharm/using-emacs-as-an-external-editor.html
+
 #### 其他類型測試
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/f01c72a5-1cb7-4c16-a074-f271dd2e4fc7)
+> Performance Testing : Load test / Soak test / Stress test
+>
+> Load Test : 使用系統上架後預期要面對的流量進行測試，確認在這樣的流量下系統功能正常。例如預期系統上架後每秒會收到100個請求，進行load test時就需要使用這樣的流量
+>
+> Soak Test : 使用系統上架後預期要面對的流量模式進行測試，並且測試要持續一段時間，確認系統可以應對這樣的模式，例如預期系統上架後平時每秒會收到100個請求，但流量會在某一段時間暴增到每秒500個請求 / 動態開啟機器模擬
+>
+> Stress Test : 使用超過系統負荷的流量進行測試，確保系統可以正確的應對無法負荷的流量。例如系統理論上最高可以承受每秒1000個請求，Stress test就要使用每秒超過1000個請求流量
+>
+> Usability Test : 直接面對使用者的程式必須進行的測試 / 系統性收集使用者介面是否足夠易於使用 / 會分別收集專家與一般人的評價
+>
+> Localization Test : 一般情況下每個deploy都應該使用一樣的code，但是在不同的地區，軟體會需要使用不同的語言、貨幣、付款方式、遵守不同的法規等，這樣的軟體需要額外測試再不同地區的localization是否有被正確設定
+
 #### Operational Excellence
+>  Operation : 軟體在發布的過程，與發布之後需要做的所有事情 / 確保軟體可以持續達成商業目標 / 在開發軟體的過程中就應該考慮之後軟體的營運
+>
+> Operation as Code : 用寫code的方式定義operation的流程 / 透過事件觸發自動化流程 / 使用CI/CD pipeline,Alarms,Infrastructure as Code...
+>
+> 頻繁的提交小改動 : 改動越小，可能出錯的機會就越少，也更容易debug / 避免同時發布多個不相關的改動，可以減少可能的錯誤發生點，也讓功能發布更順暢
+>
+> 持續優化SOP : 在不斷開發與不斷發布新功能時，也要持續根據新功能去調整與優化操作軟體的SOP / 新功能發布前要確保其運營準備operational readiness
+>
+> 提前預測錯誤的發生 : 找出可能的錯誤發生點，提前預防錯誤的發生 / 對於無法避免或預測的錯誤(介面、網路...)，要提前準備好處理錯誤的方式
+>
+> 從錯誤中學習 : 沒有完美無缺的程式，開發者也不可能考慮到所有的情況 / 重要的是讓問題影響最小化，同時避免問題再次發生 / 將錯誤的預防以及處理辦法加入到SOP之中
