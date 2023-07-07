@@ -425,16 +425,39 @@
 >
 > Pytest: https://docs.pytest.org/en/6.2.x/contents.html
 
-
 #### 整合測試(Integration Test)
-
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/7e042864-2664-419d-aab5-5ed5cc56e718)
+> 為什麼介面測試比較少，原因是不是每個單元都會相互對接
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/88639cbf-cb17-4fce-992c-192884e9be6a)
+> 是對介面的測試，確保軟體可以正確組合，但時常會被E2Etest取代
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/77a851a5-9ccb-4519-acc6-219cf1c9c846)
+> make test-inte 可以抓出return不符合預期的介面
 
 #### 端到端測試(E2E Test)
 > Postman: https://www.postman.com/
+> 運行完整的程式、模擬情境
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/bf38dd16-efad-4b48-acd8-ff818150ce66)
+> 在搭建好的測試環境測試 > 測試好之後才會上傳到產品環境，在該環境做測試
+> 
+> E2e test要自動化，產品上線前須通過自動的E2E test，他也是唯一可以在code review之後，進行的測試。
+>
+> 這是最後關卡，理想情況下，發現的錯誤只會跟環境有關
+>
+> 透過postman傳送http，測試api / 開啟postman 丟入檔案 > 啟動server: make run > 選擇我們要測試的api > send
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/f15eb5d0-6ca9-47fa-8973-1588cd830b4b)
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/5c11d653-0549-4d1b-b929-12c477971214)
+
 
 #### 程式碼審核(Code Review)
-
-
+> 多人共同開發codebase，上傳前，一定要作品質管控 peer review(PR)
+>
+> CR不是讓別人幫忙debug / 審核的code需要通過所有測試並符合coding style / 二次確認code沒問題，並提供程式碼重構的建議
+>
+> 一次提交的內容不要太多 150~200行為上限才可獲得高質量的回饋
+>
+> github有類似CR的功能 > 創建New Branch(並取名) > publish branch > 在demo裡修改後push到github上切換到剛剛建的branch > compare / creart pull request > 就可以看到剛提供的內容，並針對內容提交建議
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/db119a03-c2c8-4377-88f0-08f3bb2c0cbc)
+> 如果他提供的內容ok，就可以將改動 merge pull request 到我們codebase之中
 
 ## 部署(Deployment)
 #### 部署
