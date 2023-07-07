@@ -461,18 +461,76 @@
 
 ## 部署(Deployment)
 #### 部署
+> 讓程式可以供使用者使用的過程，對網路服務而言，就是要讓服務的伺服器運行，並提供使用者可以透過網路互動的端點(endpoint)
+> 部屬步驟 : ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/09b5a724-db87-4776-a053-e7a15ae33345)
+>
+> Source code : 一個App僅會有一個程式庫 / 一個程式庫可已有多個程式碼版本 / 一個deploy就是在一個環境中執行中的版本 / 會使用程式碼版本控管工具(如git)
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/8916fb9b-a2fc-46a9-9c6d-c3bac518634b)
+>
+> Build : 將程式碼轉換成可執行的程式的過程，Coding style check / Vulnerability check ； unit tests / Some Integration tests ； Compiling / Linking(靜態語言)
+>
+> Staging : 新版本需要先在測試環境部屬 / 有許多非功能性的測試需要在程式運行的情況下進行 / 不同測試環境會有不同測試目標
+>
+> Production : 通過測試環境後，會在生產環境部屬程式 / 仍然會持續測試程式 / 測試發生任何問題，可回朔到前一版本
+>
+> Gradual Deployment : 會希望新版本部署是漸進式 / 將新版本做最小單位部署，逐漸替換舊版本 / Canary
+>
+> 部署是重複性很高的過程，一套模式適用於所有相同類型的軟體，所以軟體工程師應該要把它自動化
+> 
+> Heroku 網站連結：https://www.heroku.com/home
 
-Heroku 網站連結：https://www.heroku.com/home
-#### 持續整合與持續交付(CI/CD)-第一部份
-Github Action 的 Documentation: https://docs.github.com/en/actions
 
-#### 持續整合與持續交付(CI/CD)-第二部份
-
+#### 持續整合與持續交付(CI/CD)
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/570f9c0a-a545-4d2a-a1d7-a2b6be4e8fd7)
+>
+> 持續整合 : 在多人開發時，每個人都會有自己正在開發的程式碼版本(自己的branch) / 不同版本之間差異愈大，在合併時越困難 / 確保每個人再提交改動時，code都是有品質的 / 對提交的code作品質管理與快速發現錯誤 / 需有板控 / 需要有自動build的CI Framework (github 雲端服務商都有這個功能)
+>
+> 在github desktop上的current branch裡面會有一個 CICD > 在pycharm上打開 > 會在branch裡面看到一個.github的資料夾內會有pipeline-definition.yml 這檔案中就有定義了CICD所需的步驟
+>![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/3834e5b1-fe2b-42b3-8a6e-aab393263707)
+> pipeline-definition.yml文檔中定義 : 每當有新branch 提交pull request的時候就會觸發CICD 的workflow > 例如先安裝python 、pipenv、dependencies... > deploy(部署)
+>
+> 在desktop上執行 create a merge commit > create pull request > 然後在到網頁上的CICD branch提交一個pull request > 然後再提交到 main上 > 可以進到ACTION的頁面看到WORKFLOW進行中
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/a95932bc-5eef-4847-8346-e7619fa62c4b)
+> 
+>![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/8311b374-7a44-413a-b924-94e79c0f1a61)
+>
+> Github Action 的 Documentation: https://docs.github.com/en/actions
+>
+> (CD)持續交付 : 有些測試必須在程式運行的情況下進行 / CI僅自動build程式，部署仍需手動進行 / Build好的程式應該要能自動部署到測試環境準備測試 / 不論何時都有準備好交付給使用者的成品/ 需要版本控制系統與部署環境的整合(每次版更便會觸發自動部署)
+>
+> github專案中，Settings > Secrets/New repository secret裡面的API KEY要跟下圖程式位置的名稱一樣 > HEROKU的頁面>Account setting的最下面有一個API Key複製貼到new secret裡 > 完成後就可以merge pull request>confirm
+>
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/000ee369-d0d8-4aec-bdbe-8008426f5e9a)
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/919345c7-a1fc-4f96-953d-a3549b9bf4a8)
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/06d6a1eb-2c3a-408a-8a39-43078acefc9b)
+>
+> 這時候還要再heroku到已上傳的專案中，開啟Settings > Config Vars 將Mongo的endpoint填到Key_Value > 同樣在Settings的Domains看到一段網址，可透過這個網址來呼叫服務，可以把這個網址放到POSTMAN，就可以得到請求
+>
+> 當建立了測試環境，我們就可建立我們的生產環境，在Overview中 Create a Heroku Pipeline / 設定名稱，將剛剛的beta ADD app加到這個Staging > 然後在Production新增 / 新名稱創建 > 當我們對測試內容有足夠信心時就可以點下Promote to Production >部署到正式環境中
+> 
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/9ed5ae48-065b-4341-bc7e-453b47317520)
+> 
+> 持續部署 : 持續交付代表的是新版本可以自動部署至測試環境，部署到生產環境的步驟仍然需要工程師手動核准 > 工程師需要隨時追蹤測試與部署的進度 / 工程師提交程式碼之後，只需要等待剩下步驟自動完成，需要自動化的E2E TEST將所有測試自動化(所有測試都不需要友人的參與)
+>
+> CI/CD是現代軟體開發的基石，讓工程師專注在開發上，可以更方便更頻繁的交付新版本
 
 #### 指標與警報(Metrics and Alarm)
-
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/991a25b1-3b6e-4d93-8335-0209bd7937a4)
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/721cb099-974d-4f3c-b25b-82ef36fb8ad4)
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/8d37da7c-949b-41b2-8650-564dc6ee4273)
+> 一般會根據不同嚴重程度有多個alarm / 根據不同環境設定不同數值 / Use aggregate alarm(追蹤其他alarm)
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/db46ea6f-0bf2-40ca-bd09-4bcbfd39797d)
+> bake time自己抓一個時間
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/03abc506-030a-45d9-ba02-c1e07c1e7bc8)
+>
+> 讓部署之後的追蹤也能自動化，用最短的時間發現問題
 
 #### Canary部署
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/9ecdb95b-6821-4a94-8f33-d883fb4cddc3)
+> Blast Radius : 在軟體發生問題時，影響範圍包含了空間與時間 / 空間~多少客戶受影響 / 時間~問題持續多久時間 (逐步部署_baketime追蹤\)
+> ![image](https://github.com/Tomalison/SoftWareFlow/assets/96727036/adb81fea-b3aa-4dbd-abda-d3ad6050f3ac)
+> 數分鐘~數小時處理完成，這種部署方法需要分散式系統的知識，而雲端服務讓一切變得很容易
+
 
 ## 總結
 #### 下一輪開發
